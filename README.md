@@ -13,3 +13,5 @@
 **sys-devel/llvm-config** - llvm as gnu binutils replacement
 
 **sys-libs/polly** - Polyhedral Optimization library for LLVM
+
+*More patches available at ***[gentoo-patchset](https://github.com/leonardohn/gentoo-patchset)***
