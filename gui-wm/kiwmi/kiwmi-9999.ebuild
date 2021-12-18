@@ -3,20 +3,23 @@
 
 EAPI=7
 
+LUA_COMPAT=( lua5-{1..4} luajit )
+
+inherit git-r3 lua-single meson
+
 DESCRIPTION="fully programmable wayland compositor"
 HOMEPAGE="https://github.com/buffet/kiwmi"
-
-inherit meson git-r3
-
 EGIT_REPO_URI="https://github.com/buffet/kiwmi"
 KEYWORDS="~amd64"
+IUSE=""
+
+REQUIRED_USE="${LUA_REQUIRED_USE}"
 
 LICENSE="MPL-2.0"
 SLOT="0"
 
-RDEPEND="
+RDEPEND="${LUA_DEPS}
 	gui-libs/wlroots
-	dev-lang/luajit
 	x11-misc/xkeyboard-config
 "
 
@@ -30,7 +33,7 @@ S="${WORKDIR}"/${PN}-9999
 
 src_configure() {
 	local emesonargs=(
-		-Dlua-pkg=luajit
+	-Dlua-pkg=${ELUA}
 	)
 	meson_src_configure
 }
