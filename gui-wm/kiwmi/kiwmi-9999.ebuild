@@ -19,7 +19,7 @@ LICENSE="MPL-2.0"
 SLOT="0"
 
 RDEPEND="${LUA_DEPS}
-	<gui-libs/wlroots-0.15.0
+	>=gui-libs/wlroots-0.15.0
 	x11-misc/xkeyboard-config
 "
 
